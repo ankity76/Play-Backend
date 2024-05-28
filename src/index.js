@@ -1,11 +1,11 @@
 // require('dotenv').config({path:'./env'})
 import dotenv from 'dotenv'
 import connectDB from "./db/index.js";
-
+import {app} from "./app.js"
 
 
 dotenv.config({
-    path: './env'
+    path: './.env'
 })
 connectDB()
 
@@ -18,6 +18,11 @@ connectDB()
     console.log("MONGODB connection failed !!! ", err);
 })
 
+app.get('/', function(req, res){
+    res.json({message: "Hello chai aur code"})
+  })
+
+
 
 
 
@@ -28,7 +33,7 @@ connectDB()
 
 import express from 'express';
 
-const app = express();
+// const app = express();
 
 
 
